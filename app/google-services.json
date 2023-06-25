@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "172515620932",
+    "firebase_url": "https://scrumgun-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "scrumgun",
+    "storage_bucket": "scrumgun.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172515620932:android:034f002686ef802fcd6411",
+        "android_client_info": {
+          "package_name": "per.scrumgun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172515620932-oar4grdi8s6s975egjnhg6noc7l4ru3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "per.scrumgun",
+            "certificate_hash": "d5e0830914f8da6ce56ce693132a3fcb60bf321a"
+          }
+        },
+        {
+          "client_id": "172515620932-aid510tlr364de48j9sl766sj3hfmpkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMYee62CeWf0jcDayJBWP05Oo14ud44t0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172515620932-aid510tlr364de48j9sl766sj3hfmpkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

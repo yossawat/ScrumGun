@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+apply from: "$project.rootDir/applyCommon.gradle"
+apply from: "$project.rootDir/core_dep.gradle"
+apply from: "$project.rootDir/test_dep.gradle"
+
+dependencies {
+    implementation project(':core')
+    implementation project(':domain')
+}

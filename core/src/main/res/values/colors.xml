@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="needle_green_base">#0b645e</color>
+    <color name="ping_base">#ffc8bb</color>
+
+    <color name="blue_base">#28B7FF</color>
+    <color name="blue_60">#23A1E0</color>
+    <color name="blue_40">#99DDFF</color>
+    <color name="blue_30">#D6F1FF</color>
+
+    <color name="red_base">#FC435C</color>
+    <color name="red_60">#CC364A</color>
+    <color name="red_40">#FF7083</color>
+    <color name="red_30">#FFB2BD</color>
+
+    <color name="green_base">#6DC43B</color>
+    <color name="green_60">#55992E</color>
+    <color name="green_40">#8ECC6A</color>
+    <color name="green_30">#A5CC8F</color>
+
+    <color name="yellow_base">#FDA21A</color>
+    <color name="yellow_60">#D68916</color>
+    <color name="yellow_40">#FFBE5C</color>
+    <color name="yellow_30">#FFDEAD</color>
+
+    <color name="neutral_base">#F2F3F5</color>
+    <color name="neutral_60">#D5D8DF</color>
+    <color name="neutral_40">#FAFBFC</color>
+
+    <color name="ink_base">#333333</color>
+    <color name="ink_40">#666666</color>
+    <color name="ink_30">#D2D2D2</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_transparent">#80000000</color>
+    <color name="line_color">#E0E0E0</color>
+    <color name="pink">#FFE5E4</color>
+</resources>

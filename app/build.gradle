@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "$project.rootDir/applyCommon.gradle"
+apply from: "$project.rootDir/core_dep.gradle"
+apply from: "$project.rootDir/test_dep.gradle"
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    defaultConfig {
+        applicationId config.applicationId
+        versionCode 1
+        versionName "1.0.0"
+        resConfigs("en", "th", "mdpi")
+
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            shrinkResources false
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':scrum')
+}

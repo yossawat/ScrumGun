@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/space_large"
+    android:paddingHorizontal="@dimen/space_large_20">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/MediumTextView.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_border_large_needle_green_corner"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/space_large"
+        android:paddingVertical="@dimen/space_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Yossawat Sarasomran" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        style="@style/RegularTextView.Body.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_small_2dp"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        tools:text="2023-06-01 17:32:35 " />
+
+    <TextView
+        android:id="@+id/workTextView"
+        style="@style/MediumTextView.SubHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_small"
+        android:text="@string/scrum_fragment_work_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+    <TextView
+        android:id="@+id/workDetailTextView"
+        style="@style/RegularTextView.Topic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/workTextView"
+        tools:text="workDetail" />
+
+    <TextView
+        android:id="@+id/blockTextView"
+        style="@style/MediumTextView.SubHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/scrum_fragment_block_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/workDetailTextView" />
+
+    <TextView
+        android:id="@+id/blockDetailTextView"
+        style="@style/RegularTextView.Topic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/blockTextView"
+        tools:text="blockDetail" />
+
+    <FrameLayout
+        android:id="@+id/menuOptionLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/border_large"
+        android:layout_marginHorizontal="@dimen/space_extra_large_60"
+        android:layout_marginTop="@dimen/space_large"
+        android:background="@color/needle_green_base"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blockDetailTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

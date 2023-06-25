@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">O.K.</string>
+    <string name="confirm">Confirm</string>
+    <string name="dialog_error_other_error_title">Something went wrong!</string>
+
+    <string name="login_fragment_title">SCRUM GUN</string>
+
+    <string name="home_fragment_check_up_button">Check Up</string>
+
+    <string name="scrum_fragment_toolbar">Android Team</string>
+    <string name="scrum_fragment_work_button">WORK</string>
+    <string name="scrum_fragment_block_button">BLOCK</string>
+    <string name="scrum_fragment_send_button">SEND</string>
+
+    <string name="work_bottom_sheet_title_label">Enter the details of work</string>
+    <string name="work_bottom_sheet_today_label">Today</string>
+
+    <string name="block_bottom_sheet_title_label">Enter the details of block</string>
+    <string name="block_bottom_sheet_none_label">None</string>
+</resources>

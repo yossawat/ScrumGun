@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Light TextView -->
+    <style name="RegularTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/fonts_regular</item>
+        <item name="android:textColor">@color/ink_base</item>
+    </style>
+
+    <style name="RegularTextView.Headline" parent="RegularTextView">
+        <item name="android:textSize">@dimen/text_headline</item>
+    </style>
+
+    <style name="RegularTextView.Title" parent="RegularTextView">
+        <item name="android:textSize">@dimen/text_title</item>
+    </style>
+
+    <style name="RegularTextView.SubHeader" parent="RegularTextView">
+        <item name="android:textSize">@dimen/text_sub_header</item>
+    </style>
+
+    <style name="RegularTextView.Topic" parent="RegularTextView">
+        <item name="android:textSize">@dimen/text_topic</item>
+    </style>
+
+    <style name="RegularTextView.Body" parent="RegularTextView">
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <style name="RegularTextView.Body.Small" parent="RegularTextView">
+        <item name="android:textSize">@dimen/text_body_small</item>
+    </style>
+
+</resources>
