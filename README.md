@@ -1,3 +1,0 @@
-# ScrumGun
-# ScrumGun
-# ScrumGun
