@@ -7,6 +7,7 @@ import io.mockk.mockk
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
+import per.scrumgun.domain.chat.ClearChatUseCase
 import per.scrumgun.domain.model.User
 import per.scrumgun.domain.user.GetUserUseCase
 import per.scrumgun.domain.user.LogoutUserUseCase
@@ -21,21 +22,23 @@ import per.scrumgun.test.utils.successResult
 class HomeViewModelTest : BaseViewModelTest() {
     private val getUserUseCase: GetUserUseCase = mockk()
     private val logoutUserUseCase: LogoutUserUseCase = mockk()
+    private val clearChatUseCase: ClearChatUseCase = mockk()
     private val themeViewModelDelegate: ThemeViewModelDelegate = ThemeViewModelDelegateImpl()
 
     private lateinit var underTest: HomeViewModel
     private lateinit var userObserver: TestObserver<User>
-    private lateinit var getUserFailedEventObserver: TestObserver<String>
+    private lateinit var homeFailedEventObserver: TestObserver<String>
 
     private fun initViewModel() {
         underTest = HomeViewModel(
             getUserUseCase,
             logoutUserUseCase,
+            clearChatUseCase,
             provideFakeCoroutinesDispatcherProvider(coroutinesTestRule.testDispatcher),
             themeViewModelDelegate
         )
         userObserver = underTest.user.test()
-        getUserFailedEventObserver = underTest.getUserFailedEvent.test()
+        homeFailedEventObserver = underTest.homeFailedEvent.test()
     }
 
     @Test
@@ -47,7 +50,7 @@ class HomeViewModelTest : BaseViewModelTest() {
         initViewModel()
 
         userObserver.assertValue(UserTestData.user)
-        getUserFailedEventObserver.assertNoValue()
+        homeFailedEventObserver.assertNoValue()
         coVerify(exactly = 1) {
             getUserUseCase.invoke(Unit)
         }
@@ -62,7 +65,7 @@ class HomeViewModelTest : BaseViewModelTest() {
         initViewModel()
 
         userObserver.assertNoValue()
-        getUserFailedEventObserver.assertNoValue()
+        homeFailedEventObserver.assertNoValue()
         coVerify(exactly = 1) {
             getUserUseCase.invoke(Unit)
         }
@@ -77,7 +80,7 @@ class HomeViewModelTest : BaseViewModelTest() {
         initViewModel()
         underTest.logout()
 
-        getUserFailedEventObserver.assertNoValue()
+        homeFailedEventObserver.assertNoValue()
         coVerify(exactly = 1) {
             logoutUserUseCase.invoke(Unit)
         }
@@ -92,9 +95,23 @@ class HomeViewModelTest : BaseViewModelTest() {
         initViewModel()
         underTest.logout()
 
-        getUserFailedEventObserver.assertHasValue()
+        homeFailedEventObserver.assertHasValue()
         coVerify(exactly = 1) {
             logoutUserUseCase.invoke(Unit)
+        }
+    }
+
+    @Test
+    fun testClearChat() {
+        clearChatUseCase.mockReturnResult {
+            successResult(Unit)
+        }
+
+        initViewModel()
+
+        homeFailedEventObserver.assertNoValue()
+        coVerify(exactly = 1) {
+            clearChatUseCase.invoke(Unit)
         }
     }
 }

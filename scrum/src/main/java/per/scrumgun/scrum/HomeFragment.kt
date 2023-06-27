@@ -2,7 +2,6 @@ package per.scrumgun.scrum
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -49,14 +48,14 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     override fun observeViewModel() {
-        mViewModel.userProgress.observe(viewLifecycleOwner) {
+        mViewModel.homeProgress.observe(viewLifecycleOwner) {
             binding.homeViewFlipper.displayedChild = if (it) 1 else 0
         }
         mViewModel.user.observe(viewLifecycleOwner) {
             binding.nameTextView.text = it.name
             binding.emailTextView.text = it.email
         }
-        mViewModel.getUserFailedEvent.observe(viewLifecycleOwner) {
+        mViewModel.homeFailedEvent.observe(viewLifecycleOwner) {
             ErrorDialog.newInstance(it).show(childFragmentManager, null)
             mAuth = FirebaseAuth.getInstance()
             mAuth.signOut()

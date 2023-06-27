@@ -1,6 +1,7 @@
 package per.scrumgun.domain.di
 
 import org.koin.dsl.module
+import per.scrumgun.domain.chat.ClearChatUseCase
 import per.scrumgun.domain.chat.ObserveChatUseCase
 import per.scrumgun.domain.friend.ObserveFriendUseCase
 import per.scrumgun.domain.message.GetMessageUseCase
@@ -42,5 +43,8 @@ val domainModule = module {
     }
     factory {
         ObserveThemeUseCase(get())
+    }
+    factory {
+        ClearChatUseCase(get(), get())
     }
 }
