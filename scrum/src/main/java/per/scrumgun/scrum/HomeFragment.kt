@@ -33,8 +33,8 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     override fun setUpView() {
         binding.logoutButton.setOnClickListener {
             mAuth = FirebaseAuth.getInstance()
-            mAuth.signOut()
             mGoogleSignInClient.signOut()
+            mAuth.signOut()
             mViewModel.logout()
             findNavControllerSafety(R.id.homeFragment)?.navigate(
                 HomeFragmentDirections.actionHomeFragmentToLoginFragment()
